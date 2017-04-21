@@ -63,7 +63,7 @@
         </select>
       </div>
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <h3>Question 4</h3><br>
         <label for="q4">You rarely do something just out of sheer curiosity.</label>
         <select class="form-control" id="q4">
@@ -145,8 +145,8 @@
           <option>4</option>
           <option>5</option>
         </select>
-      </div>
-      <button type="submit" class="btn btn-primary form-control">Submit</button>
+      </div> -->
+      <button type="submit" class="btn btn-primary form-control" id="submit">Submit</button>
     </form>
     <div class="col-md-12"
       <div class="row">
@@ -154,5 +154,23 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+    // Question: What does this code do?
+    $("#submit").on("click", function(event) {
+      event.preventDefault();
+      var newFriend = {
+        name: $("#name").val().trim(),
+        image: $("#image").val().trim(),
+        q1: $("#q1").val(),
+        q2: $("#q2").val(),
+        q3: $("#q3").val()
+      };
+      $.post("/api/friends", newFriend)
+      .done(function(data) {
+      console.log(data);
+      alert("Adding friend...");
+      });
+    });
+  </script>
 </body>
 </html>
