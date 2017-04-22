@@ -63,7 +63,7 @@
         </select>
       </div>
 
-      <!-- <div class="form-group">
+      <div class="form-group">
         <h3>Question 4</h3><br>
         <label for="q4">You rarely do something just out of sheer curiosity.</label>
         <select class="form-control" id="q4">
@@ -145,30 +145,55 @@
           <option>4</option>
           <option>5</option>
         </select>
-      </div> -->
-      <button type="submit" class="btn btn-primary form-control" id="submit">Submit</button>
+      </div>
+      <button type="submit" class="btn btn-primary form-control" data-toggle="modal" data-target="#myModal" id="submit">Submit</button>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Best Match</h4>
+            </div>
+            <div class="modal-body" id="match">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </form>
     <div class="col-md-12"
       <div class="row">
-        <a href="/api/tables">API Friends List</a> | <a href="https://github.com/serenanguyen/friendFinder">GitHub Repo</a>
+        <a href="/api/friends">API Friends List</a> | <a href="https://github.com/serenanguyen/friendFinder">GitHub Repo</a>
       </div>
     </div>
   </div>
   <script type="text/javascript">
-    // Question: What does this code do?
+
     $("#submit").on("click", function(event) {
       event.preventDefault();
       var newFriend = {
         name: $("#name").val().trim(),
         image: $("#image").val().trim(),
-        q1: $("#q1").val(),
-        q2: $("#q2").val(),
-        q3: $("#q3").val()
+        scores: [
+          $("#q1").val(),
+          $("#q2").val(),
+          $("#q3").val(),
+          $("#q4").val(),
+          $("#q5").val(),
+          $("#q6").val(),
+          $("#q7").val(),
+          $("#q8").val(),
+          $("#q9").val(),
+          $("#q10").val()
+        ]
       };
       $.post("/api/friends", newFriend)
       .done(function(data) {
-      console.log(data);
-      alert("Adding friend...");
+        console.log(data);
+        alert("Adding friend...");
+        $("#match").append("<h2>"+data.name+"</h2><br><img src='"+data.image+"'>");
       });
     });
   </script>
