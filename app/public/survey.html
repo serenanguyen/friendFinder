@@ -31,11 +31,11 @@
         <h3>Question 1</h3><br>
         <label for="q1">Your mind is always buzzing with unexplored ideas and plans.</label>
         <select class="form-control" id="q1">
-          <option>1</option>
+          <option>1 (Strongly Disagree)</option>
           <option>2</option>
           <option>3</option>
           <option>4</option>
-          <option>5</option>
+          <option>5 (Strongly Agree)</option>
         </select>
       </div>
 
@@ -43,11 +43,11 @@
         <h3>Question 2</h3><br>
         <label for="q2">Generally speaking, you rely more on your experience than your imagination.</label>
         <select class="form-control" id="q2">
-          <option>1</option>
+          <option>1 (Strongly Disagree)</option>
           <option>2</option>
           <option>3</option>
           <option>4</option>
-          <option>5</option>
+          <option>5 (Strongly Agree)</option>
         </select>
       </div>
 
@@ -55,11 +55,11 @@
         <h3>Question 3</h3><br>
         <label for="q3">You find it easy to stay relaxed and focused even when there is some pressure.</label>
         <select class="form-control" id="q3">
-          <option>1</option>
+          <option>1 (Strongly Disagree)</option>
           <option>2</option>
           <option>3</option>
           <option>4</option>
-          <option>5</option>
+          <option>5 (Strongly Agree)</option>
         </select>
       </div>
 
@@ -67,11 +67,11 @@
         <h3>Question 4</h3><br>
         <label for="q4">You rarely do something just out of sheer curiosity.</label>
         <select class="form-control" id="q4">
-          <option>1</option>
+          <option>1 (Strongly Disagree)</option>
           <option>2</option>
           <option>3</option>
           <option>4</option>
-          <option>5</option>
+          <option>5 (Strongly Agree)</option>
         </select>
       </div>
 
@@ -79,11 +79,11 @@
         <h3>Question 5</h3><br>
         <label for="q5">People can rarely upset you.</label>
         <select class="form-control" id="q5">
-          <option>1</option>
+          <option>1 (Strongly Disagree)</option>
           <option>2</option>
           <option>3</option>
           <option>4</option>
-          <option>5</option>
+          <option>5 (Strongly Agree)</option>
         </select>
       </div>
 
@@ -91,11 +91,11 @@
         <h3>Question 6</h3><br>
         <label for="q6">It is often difficult for you to relate to other people’s feelings.</label>
         <select class="form-control" id="q6">
-          <option>1</option>
+          <option>1 (Strongly Disagree)</option>
           <option>2</option>
           <option>3</option>
           <option>4</option>
-          <option>5</option>
+          <option>5 (Strongly Agree)</option>
         </select>
       </div>
 
@@ -103,11 +103,11 @@
         <h3>Question 7</h3><br>
         <label for="q7">In a discussion, truth should be more important than people’s sensitivities.</label>
         <select class="form-control" id="q7">
-          <option>1</option>
+          <option>1 (Strongly Disagree)</option>
           <option>2</option>
           <option>3</option>
           <option>4</option>
-          <option>5</option>
+          <option>5 (Strongly Agree)</option>
         </select>
       </div>
 
@@ -115,11 +115,11 @@
         <h3>Question 8</h3><br>
         <label for="q8">You rarely get carried away by fantasies and ideas.</label>
         <select class="form-control" id="q8">
-          <option>1</option>
+          <option>1 (Strongly Disagree)</option>
           <option>2</option>
           <option>3</option>
           <option>4</option>
-          <option>5</option>
+          <option>5 (Strongly Agree)</option>
         </select>
       </div>
 
@@ -127,11 +127,11 @@
         <h3>Question 9</h3><br>
         <label for="q9">You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</label>
         <select class="form-control" id="q9">
-          <option>1</option>
+          <option>1 (Strongly Disagree)</option>
           <option>2</option>
           <option>3</option>
           <option>4</option>
-          <option>5</option>
+          <option>5 (Strongly Agree)</option>
         </select>
       </div>
 
@@ -139,11 +139,11 @@
         <h3>Question 10</h3><br>
         <label for="q10">You feel more energetic after spending time with a group of people.</label>
         <select class="form-control" id="q10">
-          <option>1</option>
+          <option>1 (Strongly Disagree)</option>
           <option>2</option>
           <option>3</option>
           <option>4</option>
-          <option>5</option>
+          <option>5 (Strongly Agree)</option>
         </select>
       </div>
       <button type="submit" class="btn btn-primary form-control" data-toggle="modal" data-target="#myModal" id="submit">Submit</button>
@@ -192,8 +192,7 @@
       $.post("/api/friends", newFriend)
       .done(function(data) {
         console.log(data);
-        alert("Adding friend...");
-        $("#match").append("<h2>"+data.name+"</h2><br><img src='"+data.image+"'>");
+        $("#match").html("<h2>"+data.name+"</h2><br><img src='"+data.image+"'>");
       });
     });
   </script>
