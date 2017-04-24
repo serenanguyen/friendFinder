@@ -23,7 +23,6 @@ module.exports = function(app){
         smallIndex = i;
       }
     };
-  console.log(friends[smallIndex]);
   res.json(friends[smallIndex]);
   })
 }

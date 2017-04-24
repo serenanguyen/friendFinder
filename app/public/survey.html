@@ -174,7 +174,6 @@
       event.preventDefault();
       var newFriend = {
         name: $("#name").val().trim(),
-        image: $("#image").val().trim(),
         scores: [
           $("#q1").val(),
           $("#q2").val(),
@@ -190,8 +189,7 @@
       };
       $.post("/api/friends", newFriend)
       .done(function(data) {
-        console.log(data);
-        $("#match").html("<h2>"+data.name+"</h2><br><img src='"+data.image+"'>");
+        $("#match").html("<h2>"+newFriend.name+", you are a "+data.name+"</h2><br><img src='"+data.image+"'><br><p>"+data.message+"</p>");
       });
     });
   </script>
