@@ -1,8 +1,8 @@
 // data
 var friends = [
   {
-    name: "Pinto",
-    image: "",
+    name: "Ms. Frizzle",
+    image: "https://s-media-cache-ak0.pinimg.com/736x/78/46/59/784659bf763cc29b1655778dd90c11eb.jpg",
     scores: [1,2,3,4,5,1,2,3,4,5]
   },
   {
@@ -11,8 +11,8 @@ var friends = [
     scores: [1,1,1,1,1,1,1,1,1,1]
   },
   {
-    name: "Mushu",
-    image: "",
+    name: "Grandpa Bob",
+    image: "http://www.halsteaddiving.com/wordpress/wp-content/uploads/2011/04/Bob.jpg",
     scores: [2,2,2,2,2,2,2,2,2,2]
   }
 ];
